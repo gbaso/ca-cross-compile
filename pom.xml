@@ -52,6 +52,16 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <image>
+            <imagePlatform>linux/amd64</imagePlatform>
+            <env>
+              <BP_NATIVE_IMAGE_BUILD_ARGUMENTS>
+                -Ob -march=compatibility
+              </BP_NATIVE_IMAGE_BUILD_ARGUMENTS>
+            </env>
+          </image>
+        </configuration>
       </plugin>
     </plugins>
   </build>
